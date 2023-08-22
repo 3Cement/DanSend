@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
-// import { AiFillPlayCircle } from "react-icons/ai";
+import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
+import { TransactionContext } from "../context/TransactionContext";
+// import { Loader } from './';
 
 const Input = ({ placeholder, name, type, value, handleChange }) => (
   <input
@@ -19,10 +21,10 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 
 const Welcome = () => {
   // const { currentAccount, connectWallet, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
+  const { connectWallet, currentAccount } = useContext(TransactionContext);
 
-  const connectWallet = () => {
-
-  }
+  console.log( connectWallet )
+  console.log( currentAccount )
 
   const handleSubmit = () => {
 
@@ -42,7 +44,7 @@ const Welcome = () => {
           <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
             Explore the crypto world. Buy and sell cryptocurrencies easily on Krypto.
           </p>
-          {/* {!currentAccount && (
+          {!currentAccount && (
             <button
               type="button"
               onClick={connectWallet}
@@ -53,7 +55,7 @@ const Welcome = () => {
                 Connect Wallet
               </p>
             </button>
-          )} */}
+          )}
 
           <div className="grid sm:grid-cols-3 grid-cols-2 w-full mt-10">
             <div className={`rounded-tl-2xl ${companyCommonStyles}`}>
