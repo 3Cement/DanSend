@@ -23,8 +23,8 @@ const Welcome = () => {
   // const { currentAccount, connectWallet, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
   const { connectWallet, currentAccount, formData, sendTransaction, handleChange } = useContext(TransactionContext);
 
-  console.log( "connectWallet", connectWallet )
-  console.log( "currentAccount", currentAccount )
+  // console.log( "connectWallet", connectWallet )
+  // console.log( "currentAccount", currentAccount )
 
   const handleSubmit = (e) => {
     const { addressTo, amount, keyword, message } = formData;
